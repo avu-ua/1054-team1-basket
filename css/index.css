@@ -1,0 +1,25 @@
+.set-btn,
+.get-btn,
+.set-again-btn,
+.get-again-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px;
+    background-color: aquamarine;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buyButtonsContainer {
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.buy-button {
+    width: 150px;
+    margin: 20px;
+    padding: 5px 20px;
+    background-color: beige;
+    cursor: pointer;
+    border-radius: 5px;
+}
