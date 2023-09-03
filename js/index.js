@@ -156,11 +156,35 @@ let itemsInBasket = 0
 for (let i = 0; i < products.length; i++) {
     let buyBtn = document.querySelector(`.id-${products[i].code}`)
     buyBtn.addEventListener('click', () => {
-            console.log(`Hi, this product's id is ${products[i].code}`)
-            basket[products[i].code]++
-            itemsInBasket++
-            console.log('Basket now is: ', basket)
-            console.log('Total items in Basket', itemsInBasket)
+        console.log(`Hi, this product's id is ${products[i].code}`)
+        basket[products[i].code]++
+        itemsInBasket++
+        console.log('Basket now is: ', basket)
+        console.log('Total items in Basket', itemsInBasket)
+        console.log('------------------')
+        localStorage.setItem('basket', JSON.stringify(basket))
+        const fromLocalStorage = JSON.parse(localStorage.getItem('basket'))
+        console.log('basket from localStorage: ', fromLocalStorage)
+        console.log('=============================')
     })
 }
+
+let testclipboard
+localStorage.setItem('testData', JSON.stringify(products[1]))
+testclipboard = JSON.parse(localStorage.getItem('testData'))
+console.log('testData obtained from localStorage = ', testclipboard)
+
+localStorage.setItem('testData', JSON.stringify(products[2]))
+testclipboard = JSON.parse(localStorage.getItem('testData'))
+console.log('UPDATED testData obtained from localStorage = ', testclipboard)
+
+const addBtn = document.querySelector('.dad')
+addBtn.addEventListener('click', () => {
+  const id = document.querySelector('.dad > .id')
+  const itemId = id.textContent
+  const qty = document.querySelector('.dad > .qty')
+  const quantity = Number(qty.textContent)
+  console.log('itemId: ', itemId)
+  console.log('quantity: ', quantity)
+})
 
